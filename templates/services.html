@@ -1,0 +1,67 @@
+{% load static %}
+                            <!-- site-content -->
+                            <div id="content" class="site-content" role="main"> <!-- .page-single -->
+                            <div class="page-single page-layout">
+
+
+                                <!-- .hentry -->
+                                <article class="page hentry">
+
+                                    <!-- .entry-header -->
+                                    <header class="entry-header">
+                                        <h1 class="entry-title">Hizmetler</h1>
+                                    </header>
+                                    <!-- .entry-header -->
+
+
+                                    <!-- .entry-content -->
+                                    <div class="entry-content">
+
+
+
+
+                                        <!--FILTERS-->
+                                        <ul id="filters" class="filters">
+                                            <li class="current">
+                                                <a href="#" data-filter="*">all</a>
+                                            </li>
+
+                                            {% for s_t in service_type %}
+                                            <li>
+                                                <a href="#" data-filter=".{{s_t.slug}}">{{s_t.name}}</a>
+                                            </li>
+                                            {% endfor %}
+                                            
+                                        </ul>
+                                        <!--FILTERS-->
+
+
+
+                                        <!-- Services -->
+                                        <div class="portfolio-items media-grid masonry" data-layout="masonry"
+                                        data-item-width="360">
+                                        
+                                        {% for service in services %}
+                                            <!-- Services-item -->
+                                            <div class="media-cell {{service.service_type.slug}} hentry">
+                                                <div class="media-box">
+                                                    <img src="{{ service.images.all.0.path.url }}" alt="{{ service.images.all.0.alt }}">
+                                                    <div class="mask"></div>
+                                                    <a href="{% url 'service:single_service' s_id=service.id %}" class="ajax"></a>
+                                                </div>
+
+                                                <div class="media-cell-desc">
+                                                    <h3>{{service.name}}</h3>
+                                                    <p class="category">{{service.description|truncatechars:100}}</p>
+                                                </div>
+                                            </div>
+                                            <!-- Services-item -->
+                                        {% endfor %}
+                                        </div>
+                                        <!-- Services -->
+
+                                    </div>
+                                    <!-- .entry-content -->
+                                </article>
+                            </div>
+                            

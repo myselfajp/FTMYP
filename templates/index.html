@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js one-page-layout sound-effects" data-audio-tick="{% static 'audio/tick.mp3' %}"
+    data-click-ripple-animation="yes">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="forward target medya yapım prodüksiyon ticaret limited şirketi">
+    
+    <meta name="keywords" content="forward , target , medya , media , reklam , yalımım , web tasarım">
+    
+    <meta name="author" content="Pixelwars">
+    <meta name="theme-color" content="#1755cf" />
+
+    <title>ForwardTargetMedia</title>
+
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/ico/apple-touch-icon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fonts/jost/jost.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/nprogress/nprogress.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts/fontello/css/fontello.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/768.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/demo2.css' %}">
+</head>
+
+
+
+<body>
+
+    <div class="home-wrap">
+
+        <div class="home-bg" style="background-image: url({% static 'images/home/cover2.webp' %})"></div>
+
+        <div class="home-bg-logo">
+            <img src="{% static 'images/home/icon-bg3.svg' %}" alt="icon" />
+        </div>
+
+        <nav class="home-menu">
+            <a href="{% url 'home:about' %}" data-slug="about">
+                <span class="item-name">HAKKIMIZDA</span>
+            </a>
+            <a href="{% url 'service:all_services' %}" data-slug="all_services" id="slink" class="slink">
+                <span class="item-name">HİZMETLER</span>
+            </a>
+            <a href="{% url 'service:all_references' %}" data-slug="all_references" id="rlink" class="rlink">
+                <span class="item-name">PROJELERİMİZ</span>
+            </a>
+            <a href="{% url 'home:contact' %}" data-slug="contact">
+                <span class="item-name">İLETİŞİM</span>
+            </a>
+        </nav>
+        <div class="home-heading">
+
+            <div class="home-logo">
+                <p class="home-job-title"><span style="background-color: rgba(224, 0, 0, 0.481);">Reklam , Medya ve Yazılım hizmetleri</span></p>
+                <p class="home-marquee">
+                </p>
+                <i class="home-logo-left "><span>FORWARD</span></i>
+                <i class="home-logo-center">
+                    <span class="home-icon">
+                        <img src="{% static 'images/home/icon3.WebP' %}" alt="icon" />
+                    </span>
+                    <span class="home-text-container">
+                        <span class="home-text-container-placeholder">FORWARD TARGET MEDYA</span>
+                    </span>
+                    <span class="home-text">FORWARD TARGET MEDYA</span>
+                </i>
+                <i class="home-logo-right"><span>TARGET</span></i>
+
+            </div>
+        </div>
+
+        <p class="home-social">
+            <a class="social-link instagram" target="_blank" href="https://www.instagram.com/sektorunonculeri/"></a>
+            <a class="social-link youtube" target="_blank" href="https://www.youtube.com/@sektorunonculeri1043"></a>
+            <a class="social-link whatsapp" href="https://wa.me/905525707128" target="_blank">WhatsApp</a>
+        </p>
+        <p class="home-footer">&copy; 2023 FTMYP</p>
+        <div class="full-screen-wrap">
+            <div class="top-left"></div>
+            <div class="top-left-horiz"></div>
+            <div class="top-right"></div>
+            <div class="top-right-horiz"></div>
+            <div class="bottom-left"></div>
+            <div class="bottom-left-horiz"></div>
+            <div class="bottom-right"></div>
+            <div class="bottom-right-horiz"></div>
+        </div>
+
+        <div class="bg-music-confirm">
+            <p>MÜZİK !?</p>
+            <p><a class="bg-music-yes" role="button">Evet!</a> <a class="bg-music-no" role="button">Hayır</a> </p>
+        </div>
+
+        <div id="play-music" class="play-music autoplay">
+            <div id="music-animation" class="music-animation">
+                <span class="music-bar bar1"></span>
+                <span class="music-bar bar2"></span>
+                <span class="music-bar bar3"></span>
+                <span class="music-bar bar4"></span>
+                <span class="music-bar bar5"></span>
+            </div>
+            <div class="music-toggle" id="music-toggle"><a id="toggle" data-on-text="Müziği kapat"
+                    data-off-text="Müziği aç" role="button">Müziği aç</a></div>
+        </div>
+        <audio id="bg-music" loop src="{% static 'audio/music1.mp3' %}"></audio>
+    </div>
+    <div class="one-page-content">
+        <a href="/" class="close-page">
+            <span class="close-text"></span>
+        </a>
+
+        <div class="content-wrap"></div>
+    </div>
+
+    <div class="site-alert animated">HATA: Mesajınız Gönderilmedi</div>
+    <div class="success animated">Mesajınız Gönderildi</div>
+
+
+    <div class="overlay overlay-1"></div>
+    <div class="overlay overlay-2"></div>
+
+    <div class="p-overlay"></div>
+    <div class="p-overlay"></div>
+
+    <script src="{% static 'js/tween-max.js' %}"></script>
+    <script src="{% static 'js/jquery-address.js' %}"></script>
+    <script src="{% static 'js/nprogress/nprogress.js' %}"></script>
+    <script src="{% static 'js/jquery-isotope.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/jquery-fitvids.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup/jquery-magnific-popup.js' %}"></script>
+    <script src="{% static 'js/jquery-easing.js' %}"></script>
+    <script src="{% static 'js/jquery-validate.js' %}"></script>
+    <script src="{% static 'js/resize-sensor.js' %}"></script>
+    <script src="{% static 'js/jquery-sticky-sidebar.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

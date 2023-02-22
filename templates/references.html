@@ -1,0 +1,36 @@
+{% load static %}
+<div id="content" class="site-content" role="main">
+    <div class="page-single page-layout">
+        <article class="page hentry">
+            <header class="entry-header">
+                <h1 class="entry-title">Projeler</h1>
+            </header>
+            <div class="entry-content">
+                <ul id="filters" class="filters">
+                    <li class="current">
+                        <a href="#" data-filter="*">Hepsi</a>
+                    </li>
+                    {% for s_t in service_type %}
+                    <li>
+                        <a href="#" data-filter=".{{s_t.slug}}">{{s_t.name}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="portfolio-items media-grid masonry" data-layout="masonry" data-item-width="360">
+                    {% for referance in references %}
+                    <div class="media-cell {{referance.service_type.slug}} hentry">
+                        <div class="media-box">
+                            <img src="{{ referance.images.all.0.path.url }}" alt="{{ referance.images.all.0.alt }}">
+                            <div class="mask"></div>
+                            <a href="{% url 'service:single_reference' r_id=referance.id %}" class="ajax"></a>
+                        </div>
+                        <div class="media-cell-desc">
+                            <h3>{{referance.name}}</h3>
+                            <p class="category">{{referance.description|truncatechars:100}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </div>

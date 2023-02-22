@@ -1,0 +1,23 @@
+<!-- site-content -->
+<div id="content" class="site-content" role="main"> 
+    <div class="portfolio-single page-layout">
+        <article class="hentry">
+            <header class="entry-header">
+                <div class="portfolio-nav">
+                    <span class="back"><a href="#/{% url 'service:all_references' %}">Kapat</a></span>
+                </div>
+                <h1 class="entry-title">{{reference.name}}</h1>
+            </header>
+            <div class="entry-content">
+                <div class="portfolio-desc">
+                    <p>{{reference.description}}</p>
+                </div>
+                <p>
+                    {% for img in reference.images.all %}
+                    <img src="{{img.path.url}}" alt="{{img.alt}}">
+                    {% endfor %}
+                </p>
+            </div>
+        </article>
+    </div>
+</div>

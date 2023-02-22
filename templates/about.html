@@ -1,0 +1,47 @@
+{% load static %}
+
+<div id="content" class="site-content" role="main">
+    <div class="page-single page-layout">
+        <article class="page hentry">
+            <header class="entry-header">
+                <h1 class="entry-title">Hakkımızda</h1>
+            </header>
+            <div class="entry-content">
+                <div class="boxed is-dark">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="{% static 'images/site/about.WebP' %}" alt="about image">
+                        </div>
+                        <div class="col-sm-9">
+                            <h2 class="fw-300">Profesyonel ve alanında uzman deneyimli ekibimiz, 
+                                sizler için gerekli arge çalışmalarını yaparak  
+                                işinizi geliştirme ve büyüme aşamasında titiz bir çalışma yaparak 
+                                ihtiyacınız olan en iyi hizmeti sizlerin istekleri doğrultusunda eksiksiz bir şekilde hayata geçirirler.
+                                Proje aşamasında yapılacak hizmetlerle alakalı limiti siz belirliyorsunuz.Ekibimize de sadece uygulaması kalıyor.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-title center">
+                    <h2>
+                        <i>Uzmanlarımız</i>
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        {% for person in expert %}
+                        <div class="service">
+                            <img src="{{ person.image.path.url }}" alt="{{ person.image.alt }}" />
+                            <h3>{{ person.name }}</h3>
+                            <span>{{ person.title }}</span>
+                            <br>
+                            </br>
+                            <p>{{ person.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

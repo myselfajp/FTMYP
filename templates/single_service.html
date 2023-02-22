@@ -1,0 +1,27 @@
+<!-- site-content -->
+<div id="content" class="site-content" role="main"> 
+    <div class="portfolio-single page-layout">
+        <article class="hentry">
+            <header class="entry-header">
+                <div class="portfolio-nav">
+                    <span class="back"><a href="#{% url 'service:all_services' %}">Kapat</a></span>
+                </div>
+                <h1 class="entry-title">{{service.name}}</h1>
+            </header>
+            <div class="entry-content">
+                <div class="portfolio-desc">
+                    <p>{{service.description|safe}}</p>
+                    <p>
+                        <a href="#/contact"
+                           class="button primary">Başvur</a>
+                    </p>
+                </div>
+                <p>
+                    {% for img in service.images.all %}
+                    <img src="{{img.path.url}}" alt="{{img.alt}}">
+                    {% endfor %}
+                </p>
+            </div>
+        </article>
+    </div>
+</div>

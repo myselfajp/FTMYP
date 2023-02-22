@@ -1,0 +1,64 @@
+{% load static %}
+<div id="content" class="site-content" role="main">
+    <div class="page-single page-layout">
+        <article class="page hentry">
+            <header class="entry-header">
+                <h1 class="entry-title">İletişim</h1>
+            </header>
+            <div class="entry-content">
+                <div class="boxed">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="fun-fact">
+                                <img src="{% static 'images/site/icon-mail.svg' %}" alt="image" />
+                                <h3>MAİL ADRESİ:<br>  info@forwardtargetmedia.com</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="fun-fact">
+                                <img src="{% static 'images/site/icon-phone.svg' %}" alt="image" />
+                                <h3>Tel :<br>  +0 212 211 1634</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="fun-fact">
+                                <img src="{% static 'images/site/icon-location.svg' %}" alt="image" />
+                                <h3>ADRES:<br> Gülbahar Mah. Cemal Sururi Sok. no:15/E K:3 D:18 Halim Meriç İş Merkezi. Şişli/İSTANBUL
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="fun-fact">
+                                <img src="{% static 'images/site/icon-phone.svg' %}" alt="image" />
+                                <h3>CEP :<br>  +0 536 540 20 56</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-title center">
+                    <h2>
+                        <i>İLETİŞİM FORMU</i>
+                    </h2>
+                </div>
+                <h2 class="center fw-300">İsteklerinizi bize burdan iletebilirsiniz <strong></strong> 
+                </h2>
+                <div class="contact-form">
+                    <form id="contact-form" class="validate-form" method="post" action="{% url 'home:contact' %}">
+                        <p>
+                            <input placeholder="ADI SOYADI" type="text" name="name" id="name" class="required">
+                        </p>
+                        <p>
+                            <input placeholder="MAİL ADRESİ" type="text" name="email" id="email" class="required email">
+                        </p>
+                        <p>
+                            <textarea placeholder="MESAJ" name="message" id="message" class="required"></textarea>
+                        </p>
+                        <p>
+                            <button class="submit button primary">Gönder</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,5 +1,7 @@
 <!-- site-content -->
-<div id="content" class="site-content" role="main"> 
+
+
+<div id="content" class="site-content" role="main">
     <div class="portfolio-single page-layout">
         <article class="hentry">
             <header class="entry-header">
@@ -9,13 +11,25 @@
                 <h1 class="entry-title">{{service.name}}</h1>
             </header>
             <div class="entry-content">
+                <!-- The form -->
                 <div class="portfolio-desc">
                     <p>{{service.description|safe}}</p>
                     <p>
-                        <a href="#/contact"
-                           class="button primary">Başvur</a>
+                        <div class="validate-form"   >
+                            <form class="form-container" id="applyform" style="display: none;" method="post" action="{% url 'home:contact' %}">
+                                <input type="text" name="name" placeholder="İSİM SOYİSİM">
+                                <input type="hidden" name="message" value="teklif - {{service.name}}">
+                                <input type="text" placeholder="MAİL ADRESİ VEYA TELEFON NUMARANIZI GİRİNİZ" name="email" required>
+                                <button type="submit" class="submit button primary" style="width: 40%;">Gönder</button>
+                                <button type="button" class="button primary" onclick="closeForm()" style="width: 40%;">İptal</button>
+                            </form>
+                        </div>
+                        <a role="button" onclick="openForm()" class="button primary">Başvur</a>
+                        <!-- A button to open the popup form -->
                     </p>
                 </div>
+
+
                 <p>
                     {% for img in service.images.all %}
                     <img src="{{img.path.url}}" alt="{{img.alt}}">

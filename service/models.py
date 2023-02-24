@@ -30,6 +30,7 @@ class Service(models.Model):
 class Reference(models.Model):
     service_type = models.ForeignKey(ServiceType,null=True,on_delete=models.CASCADE)
     name = models.CharField(max_length=50,default='')
+    url = models.CharField(max_length=300,default='')
     description = models.TextField(default='')
     images = models.ManyToManyField(Image,blank=True)
     def __str__(self):

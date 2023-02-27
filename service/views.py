@@ -23,7 +23,7 @@ def http_single_services(request,s_id):
 
 def http_all_references(request):
     service_type = ServiceType.objects.all()
-    references = Reference.objects.all()
+    references = Reference.objects.all().order_by("name")
     context={
         "service_type":service_type,
         "references":references

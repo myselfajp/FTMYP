@@ -10,25 +10,23 @@ class Image(models.Model):
         self.path.delete()
         super().delete(*args,**kwargs)
 
-
 class ServiceType(models.Model):
     name = models.CharField(max_length=50,default='')
     slug = models.SlugField(max_length = 200,null=True)
     def __str__(self):
         return self.name
 
-
 class Service(models.Model):
-    service_type = models.ForeignKey(ServiceType,null=True,on_delete=models.CASCADE)
-    name = models.CharField(max_length=50,default='')
-    description = models.TextField(default='')
+    service_type = models.ForeignKey(ServiceType,null=True,on_delete=models.SET_NULL)
+    name = models.CharField(max_length=50,default='',blank=True)
+    url = models.CharField(max_length=300,default='',blank=True)
+    description = models.TextField(default='',blank=True)
     images = models.ManyToManyField(Image,blank=True)
     def __str__(self):
         return self.name
 
-
 class Reference(models.Model):
-    service_type = models.ForeignKey(ServiceType,null=True,on_delete=models.CASCADE)
+    service_type = models.ForeignKey(ServiceType,null=True,on_delete=models.SET_NULL)
     name = models.CharField(max_length=50,default='')
     url = models.CharField(max_length=300,default='')
     description = models.TextField(default='')
